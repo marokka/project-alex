@@ -43,5 +43,12 @@
 
 // console.log(isChecked || !isClose); 
 
+const numberOfFilms = prompt("Сколько фильмов вы уже смотрели?","");
 
+console.log(numberOfFilms);
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: 
+};
       
