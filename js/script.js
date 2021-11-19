@@ -128,38 +128,70 @@
 // }
 // ------- Второй урок-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-const numberOfFilms = +prompt("Сколько фильмов вы уже смотрели?","");
+// const numberOfFilms = +prompt("Сколько фильмов вы уже смотрели?","");
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
-// const a = prompt("Один из последних просмотренных фильмов?", ""),
-//       b = prompt("На сколько оцените его?",""),
-//       c = prompt("Один из последних просмотренных фильмов?", ""),
-//       d = prompt("На сколько оцените его?","");
+// if (personalMovieDB.count<10)
+// {
+//     alert("Просмотрено достаточно мало фильмов");
+// } else if(personalMovieDB.count>=10 && personalMovieDB.count<30)
+// {
+//     alert("Вы классический зритель");
+// }else if(personalMovieDB.count>=30)
+// {
+//     alert("Вы киноман");
+// } else {
+//     alert("Error");
+// }
 
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
+// // const a = prompt("Один из последних просмотренных фильмов?", ""),
+// //       b = prompt("На сколько оцените его?",""),
+// //       c = prompt("Один из последних просмотренных фильмов?", ""),
+// //       d = prompt("На сколько оцените его?","");
 
-for (let i = 0; i < 2; i++){
-    const a = prompt("Один из последних просмотренных фильмов?", ""),
-          b = prompt("На сколько оцените его?","");
+// // personalMovieDB.movies[a] = b;
+// // personalMovieDB.movies[c] = d;
 
-    if (a != null && b != null && a != "" && b != "" && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log("Save!!!");
-    } else {
-        console.log("Error!!!");
-        i--;
+// for (let i = 0; i < 2; i++){
+//     const a = prompt("Один из последних просмотренных фильмов?", ""),
+//           b = prompt("На сколько оцените его?","");
+
+//     if (a!=null && b!=null && a!='' && b!='' && a.length<50) {
+//         personalMovieDB.movies[a] = b;
+//         console.log("Save!!!");
+//     } else {
+//         console.log("Error!!!");
+//         i--;
         
-    }
+//     }
           
+// }
+// console.log(personalMovieDB);
+//-------------------------------------------------------END-------------------------------------------------
+//--------------------------------------------Функции----------------------------------------------------------
+// function showFirstMessage(text) {
+//     console.log(text);
+//     let num = 20;
+// }
+
+// showFirstMessage("Privet");
+
+// function calc(a,b) {
+//     return (a+b);
+// }
+// console.log(calc(4,3));
+
+function ret(){
+    let num = 50;
+    return num;
 }
 
-
-console.log(personalMovieDB);
+const anotherNum = ret();
+console.log(anotherNum);
