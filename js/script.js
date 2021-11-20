@@ -188,10 +188,117 @@
 // }
 // console.log(calc(4,3));
 
-function ret(){
-    let num = 50;
-    return num;
+// function ret(){
+//     let num = 50;
+//     return num;
+// }
+
+// const anotherNum = ret();
+// console.log(anotherNum);
+//--------------------------------------------------END-----------------------------------------------------
+
+//---------------------------------Методы и свойства у строк и чисел----------------------------------------
+
+// const str = "teSt";
+// const arr = [1,2,3,4,5];
+
+// console.log(str);
+// console.log(str.toLowerCase());
+// console.log(str.toUpperCase());
+
+// const fruit = "Some fruit";
+
+// console.log(fruit.indexOf("q"));
+
+// // const logg = "Hello world";
+
+// // console.log(logg.slice(6,11));
+
+// // console.log(logg.substring(6,11));
+
+// // console.log(logg.substr(6, 5));
+
+// const num = 12.2;
+// console.log(Math.round(num));
+
+// const test = "12.2px";
+
+// console.log(parseInt(test));
+
+//------------------------------------------------------End------------------------------------------------------
+
+//-----------------------------------------Задание--------------------------------------------------------------
+
+let numberOfFilms;
+
+function start(){
+    numberOfFilms = +prompt("Сколько фильмов вы уже смотрели?","");
+
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+        numberOfFilms = +prompt("Сколько фильмов вы уже смотрели?","");
+    }
+}
+start();
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+function rememberMyFilms(){ 
+    for (let i = 0; i < 2; i++){
+        const a = prompt("Один из последних просмотренных фильмов?", ""),
+            b = prompt("На сколько оцените его?","");
+
+        if (a!=null && b!=null && a!='' && b!='' && a.length<50) {
+            personalMovieDB.movies[a] = b;
+            console.log("Save!!!");
+        } else {
+            console.log("Error!!!");
+            i--;
+            
+        }     
+    }
 }
 
-const anotherNum = ret();
-console.log(anotherNum);
+// rememberMyFilms();
+
+function detectPersonalLevel(){
+    if (personalMovieDB.count<10)
+    {
+        alert("Просмотрено достаточно мало фильмов");
+    } else if(personalMovieDB.count>=10 && personalMovieDB.count<30)
+    {
+        alert("Вы классический зритель");
+    }else if(personalMovieDB.count>=30)
+    {
+        alert("Вы киноман");
+    } else {
+        alert("Error");
+    }
+}
+
+// detectPersonalLevel();
+
+function showMyDB(hidden){
+    if(!hidden){
+        console.log(personalMovieDB);
+    }
+
+}
+showMyDB(personalMovieDB.privat);
+
+function writeYourGenres() {
+    for(let i=1;i<=3;i++){
+        const a = prompt(`Ваш любимый жанр под номером ${i}`,"");
+        personalMovieDB.genres[i-1]=a;
+    }
+    //можно сделать по другому сократить код и сразу присваивать в объект данные, не создавая переменных
+    // personalMovieDB.genres[i-1]=prompt(`Ваш любимый жанр под номером ${i}`,"");
+}
+writeYourGenres();
+
+//----------------------------------------------END--------------------------------------------------
