@@ -229,76 +229,190 @@
 
 //-----------------------------------------Задание--------------------------------------------------------------
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start(){
-    numberOfFilms = +prompt("Сколько фильмов вы уже смотрели?","");
+// function start(){
+//     numberOfFilms = +prompt("Сколько фильмов вы уже смотрели?","");
 
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-        numberOfFilms = +prompt("Сколько фильмов вы уже смотрели?","");
-    }
-}
-start();
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+//         numberOfFilms = +prompt("Сколько фильмов вы уже смотрели?","");
+//     }
+// }
+// start();
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
-function rememberMyFilms(){ 
-    for (let i = 0; i < 2; i++){
-        const a = prompt("Один из последних просмотренных фильмов?", ""),
-            b = prompt("На сколько оцените его?","");
+// function rememberMyFilms(){ 
+//     for (let i = 0; i < 2; i++){
+//         const a = prompt("Один из последних просмотренных фильмов?", ""),
+//             b = prompt("На сколько оцените его?","");
 
-        if (a!=null && b!=null && a!='' && b!='' && a.length<50) {
-            personalMovieDB.movies[a] = b;
-            console.log("Save!!!");
-        } else {
-            console.log("Error!!!");
-            i--;
+//         if (a!=null && b!=null && a!='' && b!='' && a.length<50) {
+//             personalMovieDB.movies[a] = b;
+//             console.log("Save!!!");
+//         } else {
+//             console.log("Error!!!");
+//             i--;
             
-        }     
-    }
-}
+//         }     
+//     }
+// }
 
-// rememberMyFilms();
+// // rememberMyFilms();
 
-function detectPersonalLevel(){
-    if (personalMovieDB.count<10)
-    {
-        alert("Просмотрено достаточно мало фильмов");
-    } else if(personalMovieDB.count>=10 && personalMovieDB.count<30)
-    {
-        alert("Вы классический зритель");
-    }else if(personalMovieDB.count>=30)
-    {
-        alert("Вы киноман");
-    } else {
-        alert("Error");
-    }
-}
+// function detectPersonalLevel(){
+//     if (personalMovieDB.count<10)
+//     {
+//         alert("Просмотрено достаточно мало фильмов");
+//     } else if(personalMovieDB.count>=10 && personalMovieDB.count<30)
+//     {
+//         alert("Вы классический зритель");
+//     }else if(personalMovieDB.count>=30)
+//     {
+//         alert("Вы киноман");
+//     } else {
+//         alert("Error");
+//     }
+// }
 
-// detectPersonalLevel();
+// // detectPersonalLevel();
 
-function showMyDB(hidden){
-    if(!hidden){
-        console.log(personalMovieDB);
-    }
+// function showMyDB(hidden){
+//     if(!hidden){
+//         console.log(personalMovieDB);
+//     }
 
-}
-showMyDB(personalMovieDB.privat);
+// }
+// showMyDB(personalMovieDB.privat);
 
-function writeYourGenres() {
-    for(let i=1;i<=3;i++){
-        const a = prompt(`Ваш любимый жанр под номером ${i}`,"");
-        personalMovieDB.genres[i-1]=a;
-    }
-    //можно сделать по другому сократить код и сразу присваивать в объект данные, не создавая переменных
-    // personalMovieDB.genres[i-1]=prompt(`Ваш любимый жанр под номером ${i}`,"");
-}
-writeYourGenres();
+// function writeYourGenres() {
+//     for(let i=1;i<=3;i++){
+//         const a = prompt(`Ваш любимый жанр под номером ${i}`,"");
+//         personalMovieDB.genres[i-1]=a;
+//     }
+//     //можно сделать по другому сократить код и сразу присваивать в объект данные, не создавая переменных
+//     // personalMovieDB.genres[i-1]=prompt(`Ваш любимый жанр под номером ${i}`,"");
+// }
+// writeYourGenres();
 
 //----------------------------------------------END--------------------------------------------------
+// --------------------------Callback функция---------------------
+// function first(){
+
+//     setTimeout(function(){
+//         console.log(1);
+//     }, 500);
+// }
+
+// function second() {
+//     console.log(2);
+// }
+
+// first();
+// second();
+
+// function learnJS(lang, callback){
+//     console.log(`Я учу: ${lang}`);
+//     callback();
+// }
+
+// function done(){
+//     console.log('Я прошел этот урок');
+// }
+
+// learnJS('JavaScript', done);
+
+//----------------------------------------------END--------------------------------------------------
+// -------Объекты и деструктуризация объектов---------
+// const options = {
+//     name: 'Test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg:'red'
+//     },
+//     makeTest: function(){
+//         console.log('Test');
+//     }
+// };
+
+// // console.log(options.name);
+
+// // delete options.name;
+
+// // console.log(options);
+
+// // let counter = 0;
+
+// // for (let key in options){
+// //     if (typeof(options[key])== 'object'){
+// //         for (let i in options[key]){
+// //             console.log(`Объект color ${i} имеет значение ${options[key][i]}`);
+// //         }
+// //     } else
+// //     {
+// //         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+// //         counter ++;
+// //     }
+    
+// // }
+
+// // console.log(counter);
+
+// // console.log(Object.keys(options).length);
+
+// options.makeTest();
+
+// const {border, bg} = options.colors;
+
+// console.log(border);
+//----------------------------------------------END--------------------------------------------------
+
+// --------------------------------Массивы и псевдомассивы--------------------------------
+// ------------шаблон сортировки цыфрового массива 
+// const arr = [112, 2288, 333, 68, 967, 234];
+// arr.sort(compareNum);
+
+// console.log(arr);
+
+// function compareNum(a,b){
+//     return a-b;
+// }
+
+// // // arr.pop(); // удалить в конце 1 элемент в массиве
+// // // arr.push(10); //записать в конце элемент в массив
+// // // console.log(arr.length);
+// // // console.log(arr);
+// // // -----------------------свойство массива forEach------------------------
+// // arr.forEach(function(item, i, arr){
+// //     console.log(`${i}: ${item} внутри массива ${arr}`);
+// // });
+
+
+// // console.log(arr);
+
+// // for (let i=0; i < arr.length; i++){
+// //     console.log(arr[i]);
+// // }
+
+// // обычный цыкл
+
+// // for (let value of  arr){
+// //     console.log(value);
+// // }
+// // работа с массиов подобными сущнастями 
+
+// // ----сортировка массива по алфавиту
+// // const str = prompt('','');
+
+// // const products = str.split(', ');
+// // products.sort();
+// // console.log(products.join(';'));
+
