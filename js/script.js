@@ -416,3 +416,100 @@
 // // products.sort();
 // // console.log(products.join(';'));
 
+// -------------------------передача данных по ссылки и значению--------------
+
+// let a = 5,
+//     b = a;
+
+// b = b + 5;
+
+// console.log(b);
+// console.log(a);
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// const copy = obj; // передает ссылку на объект
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+// function copy (mainObj){
+//     let objCopy = {};
+
+//     let key;
+//     for (key in mainObj){
+//         objCopy[key] = mainObj[key];
+//     }
+//     return objCopy;
+// }
+// // функция копии объекта с поверхносным
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// };
+// // бывают глубокие и поверхноснные копии объекта
+// const newNumbers = copy(numbers); // создали копию объекта с помощью функции которую создали выше
+
+// newNumbers.a = 10;
+
+// // console.log(newNumbers);
+// // console.log(numbers);
+
+// const add = {
+//     d:17,
+//     e: 20
+// };
+// const clone = Object.assign({}, add);
+// clone.d = 33;
+// // console.log(clone);
+// // console.log(add);
+
+// const oldArray = ['a','b','c'];
+// const newArray = oldArray.slice(); // метод, для копирования массива
+
+// newArray[1] = 'aasdsada';
+
+// console.log(newArray);
+// console.log(oldArray);
+
+// const video = ['youtube', 'vimeo', 'rutube'],
+//       blogs = ['wordpress', 'livejournal', 'blogger'],
+//       internet = [...video, ...blogs, 'vk', 'facebook']; // спред оператор просто ставим ""..."
+
+// console.log(internet);
+
+
+// function log(a, b, c){
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+// // вывод копии поверхностного массива Spread
+
+// const num = [2,5,7];
+
+// log(...num);
+
+// const array = ['a', 'b'];
+
+// const newAarray = [...array];
+
+// const q = {
+//     one: 1,
+//     two: 2
+// };
+
+// const newObj = {...q};
+
+// console.log();
+
+//----------------------------------------------END--------------------------------------------------
