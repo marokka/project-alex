@@ -1,3 +1,46 @@
 p{
     color: brown;
 }
+body{
+    background-color: bisque;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background: red;
+    margin-bottom: 10px;
+}
+button{
+    background:black;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    color: blanchedalmond;
+    border-radius: 10px;
+    border: 2px white solid;
+}
+.circle{
+    width: 100px;
+    height: 100px;
+    background:blue;
+    border-radius: 50px;
+    margin: 5px;
+}
+.heart{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50% 50% 70% 70%;
+    margin: 10px;
+}
+.wrapper{
+    display: flex;
+}
+.black{
+    width: 200px;
+    height: 200px;
+    background-color:black;
+    border: 2px white solid;
+    color:white;
+    text-align: center;
+}

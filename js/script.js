@@ -35,7 +35,7 @@
 // console.log(5%2); // отсаток от деления 
 
 // console.log(2 + 2 * 2 !== '6'); // == - сравнение двух элементов(любого формата), === - строгое сравнение элементов , 
-// // && - и - если оба правдивы то true, если один из элементов лож то false
+// // && - и - если оба правдивы то true, если один из элементов лож то false, запинается на лжи
 // // || - или - если один из элементов true то результат true
 // // ! - отрицание
 // const isChecked = true,
@@ -622,3 +622,134 @@
 // };
 
 // personalMovieDB.writeYourGenres();
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+// динамические типизации
+// console.log(typeof(String(null)));// переобразование в строку
+
+// console.log(String(null));
+
+// console.log(typeof(String(4))); // ретко пользуются данным спосабом
+
+// //конкатинация
+// console.log(typeof(5 + '')); // при сложении со строкой у нас все равно получается строка
+
+// const num = 5;
+
+// console.log("https://vk.com/catalog/" + num);
+
+// const fontSize = 26 + 'px'; // динамическая типизация
+
+// // переобразования в цыфровой тип данных
+
+// console.log(typeof(Number('4'))); // очень устарелый вариант
+// // унарный +, для смены типа данных на число.
+// console.log(typeof(+'4'));
+
+// console.log(typeof(parseInt('15px',10)));
+
+// // boolean - типизация 
+
+// // 0, '', null, undefined, NaN - это все будет превращатся в false
+
+// let switcher = null;
+
+// if(switcher){
+//     console.log('Working...');
+// }
+
+// switcher = 1;
+
+// if(switcher){
+//     console.log('Working...');
+// }
+// // 2 вариант
+
+// console.log(typeof(Boolean(4)));
+
+// // 3 вариант
+
+// console.log(typeof(!!'44444')); // превращает в булиновую
+//----------------------------------------------------------------------------------------------------
+//--------------------------------работа с элементами-------------------------------------------------
+
+// const box = document.getElementById('box');// получение элемента по id указанного на html странице
+
+// console.log(box);
+
+// const btns = document.getElementsByTagName('button'); 
+// //getElementsByTagName - обращение к элементу и получение его по тегу
+// // [1] указывая инндекс, индекс дает возможность обратиться именно к конкретному элементу
+
+// // console.log(btns); -- обращение к колекции, если элемент будет даже -
+// // один на html странице все равно мы получим htmlколекцию
+// // console.log(btns[1]); -- обращение к опреденному элементу, для работы с 
+// // элемнтом всегда нужно обращатся напрямую к нему
+
+// console.log(btns);
+
+// const circles = document.getElementsByClassName('circle');
+// console.log(circles); // тоже выдает html колекцию, нужно обращатся на прямую
+
+// // const hearts = document.querySelectorAll('.heart');
+
+// // hearts.forEach(item => {
+// //     console.log(item);
+// // });
+
+// const oneHeart = document.querySelector('div'); // получаем элемент по первому попавшемуся тегу на странице 
+
+// console.log(oneHeart);
+
+//---------------------------------------продолжение работы с элементами------------------------------------------------
+
+// const box = document.getElementById('box'),
+//       btns = document.getElementsByTagName('button'),
+//       circles = document.getElementsByClassName('circle'),
+//       wrapper = document.querySelector('.wrapper'),
+//       hearts = wrapper.querySelectorAll('.heart'),
+//       oneHeart = wrapper.querySelector('.heart');
+      
+
+// // box.style.backgroundColor = 'blue';
+// // box.style.width = '500px'; // обращение на прямую к стилю
+// box.style.cssText= 'background-color: blue; width: 500px';
+
+// btns[1].style.borderRadius = '100%';
+
+// // for (let i =0; i < hearts.length; i++){
+// //     hearts[i].style.backgroundColor = 'black'; обращеине с помощью цыкла
+// // }
+
+// // hearts.forEach(item =>{
+// //     item.style.backgroundColor = 'black'; // с помощью forEach
+// // });
+
+// const div = document.createElement('div'); // создание элемента в js-коде
+// // const text = document.createTextNode('БУМ-Гаджет');
+
+// div.classList.add('black');
+// document.body.append(div); // добавление нового элемнта в конце кода
+
+// // wrapper.append(div); вставить элемент в конце кода
+// // appendChild - старый вариант
+// // wrapper.prepend(div); вставить элемент в начале кода
+
+// // hearts[1].before(div); вставить впереди
+// // insertBefore (элемент который втавляем, элемент перед которым хотим вставить) - 
+// // hearts[0].after(div); вставить после
+
+
+// // circles[1].remove(); удалеине элемента 
+// // hearts[0].replaceWith(circles[0]); // замена элемента
+
+// // div.innerHTML = "<b>Hello WORLD</b>"; - дает возможность добавить html код, испольщовать только с html структурой
+// // опасно для работы сайта если пользователь захочет взломать что-то
+// // div.textContent = 'hello WorlD'; // добавляет в элемент просто текст, отлично подходит для работы с текстом
+// div.innerHTML = "<b>Hello WORLD</b>";
+
+// // div.insertAdjacentHTML('beforebegin', '<h2>Hello</h2>'); //вставит четко перед элементом
+// // div.insertAdjacentHTML('afterbegin', '<h2>Hello</h2>'); втавляет в начало элемента
+// // div.insertAdjacentHTML('beforeend', '<h2>Hello</h2>'); вставляет конец элемента
+// // div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');//вставит четко после элементом
